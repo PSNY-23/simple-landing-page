@@ -6,8 +6,11 @@
     <title>Manage Landing Page</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
   </head>
-  <body class="">
+  <body class="body">
     <!-- navbar -->
     <nav
       class="container lg:text-base text-xs text-nowrap sticky top-0 z-10 mx-auto px-6 py-3 bg-transparent backdrop-blur-md"
@@ -15,33 +18,33 @@
       <!-- flex container -->
       <div class="flex justify-between items-center gap-2">
         <!-- logo -->
-        <div class="pt-2">
+        <div class="logo pt-2">
           <img class="" src="img/logo.svg" alt="logo" />
         </div>
         <!-- menu items -->
         <div class="hidden md:flex lg:space-x-6 md:space-x-2">
           <a
-            class="bg-[#242d52] hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
+            class="bg-[#242d52] menu-item hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
             href="#"
             >Pricing</a
           >
           <a
-            class="bg-[#242d52] hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
+            class="bg-[#242d52] menu-item hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
             href="#"
             >Product</a
           >
           <a
-            class="bg-[#242d52] hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
+            class="bg-[#242d52] menu-item hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
             href="#"
             >About Us</a
           >
           <a
-            class="bg-[#242d52] hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
+            class="bg-[#242d52] menu-item hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
             href="#"
             >Career</a
           >
           <a
-            class="bg-[#242d52] hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
+            class="bg-[#242d52] menu-item hover:bg-orange-600 px-5 py-2 hover:rounded-md rounded-full font-semibold text-white"
             href="#"
             >Community</a
           >
@@ -56,7 +59,7 @@
         <!-- Hamburger -->
         <button
           id="menu-btn"
-          class="block hamburger md:hidden focus:outline-none"
+          class="z-20 block hamburger md:hidden focus:outline-none"
         >
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
@@ -64,16 +67,16 @@
         </button>
       </div>
       <!-- Mobile menu for navlinks -->
-      <div class="md:hidden">
+      <div class="">
         <div
           id="menu"
-          class="hidden absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          class="hidden z-10 absolute flex-col items-center self-end py-8 -mt-10  space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
         >
-          <a href="#">Pricing</a>
-          <a href="#">Products</a>
-          <a href="#">About us</a>
-          <a href="#">Careers</a>
-          <a href="#">Community</a>
+          <a class="menu-item-mobile" href="#">Pricing</a>
+          <a class="menu-item-mobile" href="#">Products</a>
+          <a class="menu-item-mobile" href="#">About us</a>
+          <a class="menu-item-mobile" href="#">Careers</a>
+          <a class="menu-item-mobile" href="#">Community</a>
         </div>
       </div>
     </nav>
@@ -85,11 +88,13 @@
         <!-- Left item -->
         <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
           <h1
-            class="max-w-md text-[#242D52] text-4xl font-bold text-center md:text-5xl md:text-left"
+            class="hero-title max-w-md text-[#242D52] text-4xl font-bold text-center md:text-5xl md:text-left"
           >
             Bring Everyone together to build better products.
           </h1>
-          <p class="max-w-sm text-center md:text-left text-[#242D52]">
+          <p
+            class="hero-description max-w-sm text-center md:text-left text-[#242D52]"
+          >
             Manage makes it simple for software teams to plan day-to-day tasks
             while keeping the larger team goals in view.
           </p>
@@ -253,7 +258,7 @@
           </div>
           <!-- Tesimonial-2 -->
           <div
-            class="drop-shadow-xl hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3"
+            class="drop-shadow-xl md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3"
           >
             <img class="w-16 -mt-14" src="img/avatar-anisha.png" alt="avatar" />
             <h5 class="text-lg font-bold text-[#242D52]">Anisha Li</h5>
@@ -265,7 +270,7 @@
           </div>
           <!-- Testimonial-3 -->
           <div
-            class="drop-shadow-xl hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3"
+            class="drop-shadow-xl md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3"
           >
             <img
               class="w-16 -mt-14"
